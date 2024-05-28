@@ -40,7 +40,7 @@
             this.dataGridView_Consolas = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Actualizar_registro_texbox = new System.Windows.Forms.Button();
             this.Leer_registros_boton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Compania = new System.Windows.Forms.ComboBox();
@@ -166,15 +166,16 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // Actualizar_registro_texbox
             // 
-            this.button3.BackColor = System.Drawing.Color.Yellow;
-            this.button3.Location = new System.Drawing.Point(10, 84);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(108, 38);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Actualizar registro ";
-            this.button3.UseVisualStyleBackColor = false;
+            this.Actualizar_registro_texbox.BackColor = System.Drawing.Color.Yellow;
+            this.Actualizar_registro_texbox.Location = new System.Drawing.Point(10, 84);
+            this.Actualizar_registro_texbox.Name = "Actualizar_registro_texbox";
+            this.Actualizar_registro_texbox.Size = new System.Drawing.Size(108, 38);
+            this.Actualizar_registro_texbox.TabIndex = 5;
+            this.Actualizar_registro_texbox.Text = "Actualizar registro ";
+            this.Actualizar_registro_texbox.UseVisualStyleBackColor = false;
+            this.Actualizar_registro_texbox.Click += new System.EventHandler(this.Actualizar_registro_Click);
             // 
             // Leer_registros_boton
             // 
@@ -192,7 +193,7 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.Leer_registros_boton);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.Actualizar_registro_texbox);
             this.groupBox1.Location = new System.Drawing.Point(25, 325);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(362, 147);
@@ -279,7 +280,7 @@
         private System.Windows.Forms.DataGridView dataGridView_Consolas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Actualizar_registro_texbox;
         private System.Windows.Forms.Button Leer_registros_boton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox Compania;

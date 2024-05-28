@@ -67,5 +67,21 @@ namespace Laboratorio_de_curso
         {
 
         }
+
+        private void Actualizar_registro_Click(object sender, EventArgs e)
+        {
+            usr.id_consola = int.Parse(ID_Consola.Text);
+            usr.nombre_consola = Nombre_de_Consola.Text;
+            usr.compania = Compania.Text;
+            usr.ano_de_lanzamiento = Ano_lanzamiento.Value;
+            usr.generacion = int.Parse(Generacion_numeric.Text);
+
+            clscone.Actualizar_registro(usr);
+
+            MessageBox.Show("Registro actualizado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            DataTable dt = registros_consolas.LeerTodos();
+            dataGridView_Consolas.DataSource = dt;
+        }
     }
 }

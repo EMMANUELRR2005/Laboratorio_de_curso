@@ -96,6 +96,35 @@ namespace Laboratorio_de_curso.Data
                 connection.Close();
             }
         }
+        //Funcion para actulizar registro 
+        public void Actualizar_registro(Usuario usr)
+        {
+            try
+            {
+                string query = "UPDATE catalogo_consolas SET nombre_consola = @nombre_consola, compania = @compania, anio_lanzamiento = @anio_lanzamiento, generacion = @generacion WHERE id_consola = @id_consola";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@id_consola", usr.id_consola);
+                cmd.Parameters.AddWithValue("@nombre_consola", usr.nombre_consola);
+                cmd.Parameters.AddWithValue("@compania", usr.compania);
+                cmd.Parameters.AddWithValue("@anio_lanzamiento", usr.ano_de_lanzamiento);
+                cmd.Parameters.AddWithValue("@generacion", usr.generacion);
+
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el registro" + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
 
     }
 
