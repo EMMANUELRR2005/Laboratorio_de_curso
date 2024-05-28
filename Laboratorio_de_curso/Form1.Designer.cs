@@ -37,7 +37,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.Generacion = new System.Windows.Forms.TextBox();
             this.dataGridView_Consolas = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -46,8 +45,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Compania = new System.Windows.Forms.ComboBox();
             this.Ano_lanzamiento = new System.Windows.Forms.DateTimePicker();
+            this.Generacion_numeric = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Consolas)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Generacion_numeric)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -134,13 +135,6 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Generacion";
             // 
-            // Generacion
-            // 
-            this.Generacion.Location = new System.Drawing.Point(164, 284);
-            this.Generacion.Name = "Generacion";
-            this.Generacion.Size = new System.Drawing.Size(200, 20);
-            this.Generacion.TabIndex = 3;
-            // 
             // dataGridView_Consolas
             // 
             this.dataGridView_Consolas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -158,6 +152,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Crear Registro";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -222,10 +217,19 @@
             // 
             // Ano_lanzamiento
             // 
+            this.Ano_lanzamiento.CustomFormat = "yyyy";
+            this.Ano_lanzamiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Ano_lanzamiento.Location = new System.Drawing.Point(164, 228);
             this.Ano_lanzamiento.Name = "Ano_lanzamiento";
             this.Ano_lanzamiento.Size = new System.Drawing.Size(200, 20);
             this.Ano_lanzamiento.TabIndex = 8;
+            // 
+            // Generacion_numeric
+            // 
+            this.Generacion_numeric.Location = new System.Drawing.Point(164, 285);
+            this.Generacion_numeric.Name = "Generacion_numeric";
+            this.Generacion_numeric.Size = new System.Drawing.Size(200, 20);
+            this.Generacion_numeric.TabIndex = 9;
             // 
             // Form1
             // 
@@ -233,11 +237,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.ClientSize = new System.Drawing.Size(986, 533);
+            this.Controls.Add(this.Generacion_numeric);
             this.Controls.Add(this.Ano_lanzamiento);
             this.Controls.Add(this.Compania);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView_Consolas);
-            this.Controls.Add(this.Generacion);
             this.Controls.Add(this.Nombre_de_Consola);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.ID_Consola);
@@ -253,6 +257,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Consolas)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Generacion_numeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,7 +274,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox Generacion;
         private System.Windows.Forms.DataGridView dataGridView_Consolas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
@@ -278,6 +282,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox Compania;
         private System.Windows.Forms.DateTimePicker Ano_lanzamiento;
+        private System.Windows.Forms.NumericUpDown Generacion_numeric;
     }
 }
 

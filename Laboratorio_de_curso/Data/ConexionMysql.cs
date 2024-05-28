@@ -43,6 +43,30 @@ namespace Laboratorio_de_curso.Data
             }
             return dt;
         }
+        //Funcion para agregar nuevo registro 
+        public void Insertar (Usuario usr)
+        {
+            try
+            {
+                string query = "INSERT INTO catalogo_consolas ( nombre_consola, compania, anio_lanzamiento, generacion) VALUES (@nombre_consola, @compania, @anio_lanzamiento, @generacion)";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@nombre_consola", usr.nombre_consola);
+                cmd.Parameters.AddWithValue("@compania", usr.compania);
+                cmd.Parameters.AddWithValue("@anio_lanzamiento", usr.ano_de_lanzamiento);
+                cmd.Parameters.AddWithValue("@generacion", usr.generacion);
+                connection.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar el registro" + ex.Message);
+            }
+            finally
+            {
+                connection.Close(); 
+            }
+        }
 
 
     }
