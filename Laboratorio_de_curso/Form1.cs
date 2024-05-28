@@ -44,6 +44,28 @@ namespace Laboratorio_de_curso
             usr.generacion = int.Parse(Generacion_numeric.Text);
             clscone.Insertar (usr);
 
+            MessageBox.Show("Registro creado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Nombre_de_Consola.Clear();
+
+            DataTable dt = registros_consolas.LeerTodos();
+            dataGridView_Consolas.DataSource = dt;
+
+        }
+        //Boton para borrar registro 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            usr.id_consola = int.Parse (ID_Consola.Text);
+            clscone.Eliminar_registro(usr);
+
+            MessageBox.Show("Se elimino el registro correctamente", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information );
+
+            DataTable dt = registros_consolas.LeerTodos();
+            dataGridView_Consolas.DataSource = dt;
+        }
+
+        private void ID_Consola_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -87,6 +87,7 @@
             this.ID_Consola.Name = "ID_Consola";
             this.ID_Consola.Size = new System.Drawing.Size(200, 20);
             this.ID_Consola.TabIndex = 3;
+            this.ID_Consola.TextChanged += new System.EventHandler(this.ID_Consola_TextChanged);
             // 
             // label4
             // 
@@ -163,6 +164,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Eliminar Registro";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 

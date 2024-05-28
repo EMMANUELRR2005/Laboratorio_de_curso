@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Tls;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -67,7 +68,34 @@ namespace Laboratorio_de_curso.Data
                 connection.Close(); 
             }
         }
+        //Funcion para eleminar un registro 
+        
+        public void Eliminar_registro (Usuario usr)
+        {
+            try
+            {
+                string query = "DELETE FROM catalogo_consolas WHERE id_consola = @id_consola";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
+                cmd.Parameters.AddWithValue("@id_consola", usr.id_consola);
+
+                connection.Open();
+                cmd.ExecuteNonQuery();
+                
+
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al eleminar el registro" + ex.Message);
+            } 
+
+            finally
+            {
+                connection.Close();
+            }
+        }
 
     }
 
