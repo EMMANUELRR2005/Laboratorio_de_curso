@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -122,11 +123,38 @@ namespace Laboratorio_de_curso.Data
             {
                 connection.Close();
             }
+        }
+        //Funcion para buscar por su numero de ID
+        public DataRow LeerPorId(int id)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                string query = "SELECT * FROM catalogo_consolas WHERE id_consola = @id_consola";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@id_consola", id);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                connection.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al leer el registro: " + ex.Message);
+                
+            }
+            finally
+            {
+                connection.Close();
+
+            }
+            return dt.Rows[0];
 
         }
 
 
+
+
     }
 
- }
+}
 

@@ -46,6 +46,7 @@
             this.Compania = new System.Windows.Forms.ComboBox();
             this.Ano_lanzamiento = new System.Windows.Forms.DateTimePicker();
             this.Generacion_numeric = new System.Windows.Forms.NumericUpDown();
+            this.Buscar_por_id = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Consolas)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Generacion_numeric)).BeginInit();
@@ -234,12 +235,23 @@
             this.Generacion_numeric.Size = new System.Drawing.Size(200, 20);
             this.Generacion_numeric.TabIndex = 9;
             // 
+            // Buscar_por_id
+            // 
+            this.Buscar_por_id.Location = new System.Drawing.Point(409, 434);
+            this.Buscar_por_id.Name = "Buscar_por_id";
+            this.Buscar_por_id.Size = new System.Drawing.Size(88, 37);
+            this.Buscar_por_id.TabIndex = 10;
+            this.Buscar_por_id.Text = "Buscar por ID";
+            this.Buscar_por_id.UseVisualStyleBackColor = true;
+            this.Buscar_por_id.Click += new System.EventHandler(this.Buscar_por_id_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkKhaki;
             this.ClientSize = new System.Drawing.Size(986, 533);
+            this.Controls.Add(this.Buscar_por_id);
             this.Controls.Add(this.Generacion_numeric);
             this.Controls.Add(this.Ano_lanzamiento);
             this.Controls.Add(this.Compania);
@@ -286,6 +298,7 @@
         private System.Windows.Forms.ComboBox Compania;
         private System.Windows.Forms.DateTimePicker Ano_lanzamiento;
         private System.Windows.Forms.NumericUpDown Generacion_numeric;
+        private System.Windows.Forms.Button Buscar_por_id;
     }
 }
 

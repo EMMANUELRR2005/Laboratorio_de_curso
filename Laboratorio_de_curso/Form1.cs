@@ -83,5 +83,24 @@ namespace Laboratorio_de_curso
             DataTable dt = registros_consolas.LeerTodos();
             dataGridView_Consolas.DataSource = dt;
         }
+
+        private void Buscar_por_id_Click(object sender, EventArgs e)
+        {
+            DataRow resp = clscone.LeerPorId(int.Parse(ID_Consola.Text));
+
+            if (resp != null)
+            {
+                Nombre_de_Consola.Text = resp["nombre_consola"].ToString();
+                Compania.Text = resp["compania"].ToString();
+                
+                Generacion_numeric.Text = resp["generacion"].ToString();
+
+
+            }
+            else
+            {
+                MessageBox.Show("No se encontro el registro");
+            }
+        }
     }
 }
